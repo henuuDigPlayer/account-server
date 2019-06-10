@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lindj.boot.mapper.SysRoleMapper">
+  <resultMap id="BaseResultMap" type="com.lindj.boot.model.SysRole">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="delete_status" jdbcType="VARCHAR" property="deleteStatus" />
+  </resultMap>
+
+
+
+
+  <select id="selectListByUid" parameterType="integer"  resultMap="BaseResultMap">
+        select role.*
+        from sys_user_role uRole, sys_role role
+        where role.id = uRole.sys_role_id and uRole.sys_user_id = #{uid,jdbcType=INTEGER}
+    </select>
+</mapper>

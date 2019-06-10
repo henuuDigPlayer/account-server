@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lindj.boot.mapper.SysUserRoleMapper">
+  <resultMap id="BaseResultMap" type="com.lindj.boot.model.SysUserRole">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="sys_user_id" jdbcType="INTEGER" property="sysUserId" />
+    <result column="sys_role_id" jdbcType="INTEGER" property="sysRoleId" />
+  </resultMap>
+</mapper>

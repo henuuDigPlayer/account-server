@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lindj.boot.mapper.SysUserMapper">
+    <resultMap id="BaseResultMap" type="com.lindj.boot.model.SysUser">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="nickname" jdbcType="VARCHAR" property="nickname"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="delete_status" jdbcType="VARCHAR" property="deleteStatus"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    id, username, password, nickname, create_time, update_time, delete_status
+  </sql>
+
+    <select id="getUserPermissionList" parameterType="integer" resultType="string">
+        select permission.permission_code
+        from
+        sys_user_role uRole,
+        sys_role_permission rPermission,
+        sys_permission  permission
+        where
+        uRole.sys_user_id=#{id,jdbcType=INTEGER}
+        and uRole.sys_role_id =rPermission.role_id
+        and rPermission.permission_id = permission.id;
+    </select>
+
+    <select id="getUserByUsername" parameterType="string" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_user
+        where username = #{username,jdbcType=VARCHAR}
+    </select>
+</mapper>
