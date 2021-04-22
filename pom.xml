@@ -30,7 +30,7 @@
     <druid-spring-boot2-actuator-starter>1.1.10</druid-spring-boot2-actuator-starter>
     <redisson>3.10.0</redisson>
     <fast-json>1.2.58</fast-json>
-    <shiro-spring>1.4.0</shiro-spring>
+    <shiro-spring>1.7.0</shiro-spring>
     <java-jwt>3.2.0</java-jwt>
   </properties>
 
