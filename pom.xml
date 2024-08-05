@@ -28,7 +28,7 @@
     <mybatis-plus-boot-starter>3.1.0</mybatis-plus-boot-starter>
     <druid-spring-boot2-starter>1.1.10</druid-spring-boot2-starter>
     <druid-spring-boot2-actuator-starter>1.1.10</druid-spring-boot2-actuator-starter>
-    <redisson>3.10.0</redisson>
+    <redisson>3.22.0</redisson>
     <fast-json>1.2.58</fast-json>
     <shiro-spring>1.4.0</shiro-spring>
     <java-jwt>3.2.0</java-jwt>
